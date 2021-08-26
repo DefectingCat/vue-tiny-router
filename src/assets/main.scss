@@ -1,0 +1,17 @@
+html,
+body {
+  @apply m-2;
+}
+
+.btn {
+  @apply h-10 w-24 rounded-4xl bg-gradient-to-tr from-green-300 to-blue-300;
+}
+
+// 卡片的阴影
+.card {
+  box-shadow: 0 0 6px 0 rgb(30 45 62 / 9%);
+  transition: all 0.3s ease;
+}
+.card:hover {
+  box-shadow: 0 10px 15px 0 rgb(30 45 62 / 4%), 0 0 50px 0 rgb(31 44 60 / 5%);
+}
