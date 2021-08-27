@@ -1,12 +1,12 @@
 import { createVNode, defineComponent, shallowRef } from 'vue';
-import routers from './routers';
+import routes from './routes';
 
 export default defineComponent({
   name: 'RouterView',
   setup() {
     let currentPath = window.location.pathname;
     const component = shallowRef(
-      routers.find((item) => item.path === currentPath)?.component ??
+      routes.find((item) => item.path === currentPath)?.component ??
         'Note found'
     );
 
@@ -14,7 +14,7 @@ export default defineComponent({
       console.log(e.detail);
       currentPath = e.detail;
       component.value =
-        routers.find((item) => item.path === currentPath)?.component ??
+        routes.find((item) => item.path === currentPath)?.component ??
         'Note found';
     };
 

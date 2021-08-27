@@ -4,19 +4,17 @@
 
 <script lang="ts" setup>
 import { onUpdated, shallowRef } from 'vue';
-import routers from './routers';
+import routes from './routes';
 
 let currentPath = window.location.pathname;
 const component = shallowRef(
-  routers.find((item) => item.path === currentPath)?.component
+  routes.find((item) => item.path === currentPath)?.component
 );
 
 const handleEvent = (e: CustomEvent<string>) => {
   console.log(e.detail);
   currentPath = e.detail;
-  component.value = routers.find(
-    (item) => item.path === currentPath
-  )?.component;
+  component.value = routes.find((item) => item.path === currentPath)?.component;
 };
 
 document.addEventListener('route', handleEvent as EventListener);

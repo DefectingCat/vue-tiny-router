@@ -1,6 +1,6 @@
 <template>
   <ul class="flex">
-    <li v-for="route of routers" :key="route.path">
+    <li v-for="route of routes" :key="route.path">
       <router-link :to="route.path">{{ route.name }}</router-link>
     </li>
   </ul>
@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts" setup>
-import routers from './router/routers';
+import routes from './router/routes';
 </script>
 
 <style scoped lang="scss"></style>
