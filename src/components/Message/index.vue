@@ -29,6 +29,7 @@ const props = withDefaults(defineProps<Props>(), {
   message: '',
   duration: 3000,
 });
+const emit = defineEmits(['destroy']);
 
 const visible = ref(true);
 const timer = ref(0);
@@ -36,6 +37,7 @@ const timer = ref(0);
 const startTime = () => {
   timer.value = setTimeout(() => {
     visible.value = false;
+    emit('destroy');
   }, props.duration);
 };
 
